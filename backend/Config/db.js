@@ -1,9 +1,6 @@
 const { Sequelize } = require('sequelize');
+require('dotenv').config();
 
-const sequelize = new Sequelize('ride_in_motihari_db', 'root', '1265', {
-  host: 'localhost',
-  dialect: 'mysql',
- 
-});
+const sequelize = new Sequelize(process.env.MYDATABASE_URL);
 
 module.exports = sequelize;
