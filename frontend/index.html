@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RideInMotihari - Book rides with local service providers">
+    
+    <!-- Preconnect to Google Maps API -->
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+    
+    <title>RideInMotihari - Book Rides in Motihari</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Google Maps API Loader Script -->
+    <script>
+      let mapsLoaded = false;
+      let mapsListeners = [];
+      
+      function initMap() {
+        mapsLoaded = true;
+        mapsListeners.forEach(callback => callback());
+        mapsListeners = [];
+      }
+      
+      function loadGoogleMaps() {
+        if (window.google) {
+          initMap();
+          return;
+        }
+        
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCEb_4tLj2NUNBXaOfkIdNGQi1MvF4xXZo&libraries=places&callback=initMap`;
+        script.async = true;
+        script.defer = true;
+        script.onerror = () => console.error('Failed to load Google Maps API');
+        document.head.appendChild(script);
+      }
+      
+      window.gmReady = (callback) => {
+        if (mapsLoaded) {
+          callback();
+        } else {
+          mapsListeners.push(callback);
+        }
+      };
+      
+      loadGoogleMaps();
+    </script>
+  </body>
+</html>
