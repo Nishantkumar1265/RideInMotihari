@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const sequelize = require('./Config/db');
+const sequelize = require('../Config/db.js'); // Ensure this path is correct
 
 // Routes
-const userRoutes = require('./api/userApi');
-const serviceProviderRoutes = require('./api/serviceProviderApi');
-const bookingRoutes = require('./api/bookingApi');
-const serviceTypeRoutes = require('./api/serviceTypeApi');
-const Auth = require("./models/authModel/authModels.js");
-const authRoutes = require('./api/authApi.js');
+const userRoutes = require('../api/userApi');
+const serviceProviderRoutes = require('../api/serviceProviderApi');
+const bookingRoutes = require('../api/bookingApi');
+const serviceTypeRoutes = require('../api/serviceTypeApi');
+const Auth = require("../models/authModel/authModels.js");
+const authRoutes = require('../api/authApi.js');
 
 // Middleware
 app.use(express.json());
