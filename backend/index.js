@@ -15,7 +15,7 @@ const authRoutes = require('./api/authApi.js');
 app.use(express.json());
 
 // CORS configuration (allowing Vercel to make requests)
-const allowedOrigins = ['https://your-vercel-app-url.vercel.app']; // Add your Vercel URL here
+const allowedOrigins = ['https://ride-in-motihari.vercel.app/']; // Add your Vercel URL here
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests from Vercel frontend or localhost for development
