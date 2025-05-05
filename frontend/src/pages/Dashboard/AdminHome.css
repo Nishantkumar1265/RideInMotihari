@@ -1,0 +1,82 @@
+.user-home-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Header */
+  .user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 30px;
+    /* background-color: #007bff; */
+  }
+  
+  .logout-btn {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* Section headers */
+  .providers-section h2 {
+    padding:  15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    color: white;
+    width: 40%;
+  }
+  
+  /* Tables */
+  .bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: lightgreen;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .bookings-table th,
+  .bookings-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background-color: lightgreen;
+  }
+  
+  .bookings-table th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* Status Dropdown */
+  .status-dropdown {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: black;
+    font-size: 14px;
+  }
+  

@@ -1,0 +1,366 @@
+/* Base Styles */
+.homepage-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: linear-gradient(135deg, #2c3e50, #4a6491);
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Logo Styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.company-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #f0f0f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Flipping Logo */
+.flip-container {
+  perspective: 1000px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.flip-container:hover {
+  transform: scale(1.05);
+}
+
+.flip-container.flipped {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.flipper {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Moving Car Animation */
+.moving-car {
+  position: absolute;
+  left: 325px;
+  width: 220px;
+  height: 150px;
+  animation: moveCar 8s infinite linear;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
+}
+
+@keyframes moveCar {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(200px); }
+  100% { transform: translateX(0); }
+}
+
+/* Role Selector Styles */
+.role-selector {
+  position: relative;
+}
+
+.role-button {
+  background: linear-gradient(to right, #3498db, #2980b9);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.role-button:hover {
+  background: linear-gradient(to right, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.role-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 180px;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: white;
+  color: #2c3e50;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+  color: #2980b9;
+  padding-left: 25px;
+}
+
+/* Video Background with Overlay */
+.video-overlay-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.welcome-dashboard {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 30px;
+  width: 300px;
+  z-index: 2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.welcome-dashboard:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%) scale(1.03);
+}
+
+.dashboard-content {
+  text-align: center;
+}
+
+.dashboard-content h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.dashboard-content p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.book-now-btn {
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.book-now-btn:hover {
+  background: linear-gradient(to right, #2980b9, #3498db);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(41, 128, 185, 0.4);
+}
+
+/* Footer Styles */
+.main-footer {
+  background: linear-gradient(135deg, #2c3e50, #1a2639);
+  color: white;
+  padding: 40px 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: white;
+  white-space: nowrap;
+}
+
+.footer-section p {
+  margin: 8px 0;
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-section p:hover {
+  color: #3498db;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .moving-car {
+    position: static;
+    animation: none;
+    width: 150px;
+    height: auto;
+  }
+
+  .welcome-dashboard {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .dashboard-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-content p {
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-content p {
+    font-size: 0.95rem;
+  }
+
+  .book-now-btn {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}

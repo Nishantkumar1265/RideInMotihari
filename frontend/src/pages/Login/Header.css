@@ -1,0 +1,114 @@
+/* Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    color: white;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  /* Logo Styles */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .company-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+  
+  /* Flipping Logo */
+  .flip-container {
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .flip-container:hover {
+    transform: scale(1.05);
+  }
+  
+  .flip-container.flipped {
+    transform: rotateY(180deg) scale(1.05);
+  }
+  
+  .flipper {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+  }
+  
+  /* Moving Car Animation */
+  .moving-car {
+    position: absolute;
+    left: 325px;
+    width: 220px;
+    height: 150px;
+    animation: moveCar 8s infinite linear;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
+  }
+  
+  @keyframes moveCar {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(200px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .main-header {
+      padding: 15px 20px;
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .logo-container {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .moving-car {
+      position: static;
+      animation: none;
+      width: 150px;
+      height: auto;
+    }
+  }
+  
